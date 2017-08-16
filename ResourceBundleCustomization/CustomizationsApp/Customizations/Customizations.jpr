@@ -258,10 +258,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="../../../../../Tools/JDev/122100/.jdeveloper/system12.2.1.0.42.151011.0031/o.jdeveloper/SQLJ Runtime.library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="JSF 2.2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -271,10 +267,6 @@
          </hash>
          <hash>
             <value n="id" v="ADF Library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="AdflibMainMDSApp.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -323,15 +315,6 @@
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF Library"/>
                <value n="id" v="ADF Library"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../../libs/adflibMainMDSApp.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="AdflibMainMDSApp.jar"/>
-               <value n="id" v="AdflibMainMDSApp.jar"/>
-               <value n="locked" v="true"/>
             </hash>
          </list>
       </hash>
@@ -413,10 +396,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="../../../../../Tools/JDev/122100/.jdeveloper/system12.2.1.0.42.151011.0031/o.jdeveloper/SQLJ Runtime.library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="JSF 2.2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -426,10 +405,6 @@
          </hash>
          <hash>
             <value n="id" v="ADF Library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="AdflibMainMDSApp.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -644,12 +619,6 @@
    <hash n="ResourceBundleOptions">
       <value n="DefaultBundleTypeId" v="xliffResourceBundleId"/>
       <value n="DefaultProjectBundleName" v="xliffBundles.MainMDSAppOverrideBundle"/>
-      <list n="RegisteredResourceBundles">
-         <hash>
-            <value n="BundleId" v="xliffBundles.MainMDSAppOverrideBundle"/>
-            <value n="LibraryURL"/>
-            <url n="ProjectURL" path="Customizations.jpr"/>
-         </hash>
-      </list>
+      <list n="RegisteredResourceBundles"/>
    </hash>
 </jpr:project>
