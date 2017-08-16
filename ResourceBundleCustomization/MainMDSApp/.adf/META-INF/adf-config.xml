@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config"
+            xmlns:config="http://xmlns.oracle.com/bc4j/configuration"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties"
+            xmlns:sec="http://xmlns.oracle.com/adf/security/config">
+  <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+    <defaults useBindVarsForViewCriteriaLiterals="true"
+              useBindValuesInFindByKey="true" executeEmptyOnException="true" joinNewFrameTransaction="true"/>
+    <startup>
+      <amconfig-overrides>
+        <config:Database jbo.locking.mode="optimistic"/>
+      </amconfig-overrides>
+    </startup>
+  </adf-adfm-config>
+  <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+    <adf-property name="adfAppUID" value="MainMDSApp.com.kuchi.main"/>
+  </adf:adf-properties-child>
+  <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
+    <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
+                            credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
+    <sec:JaasSecurityContext initialContextFactoryClass="oracle.adf.share.security.JAASInitialContextFactory"
+                             jaasProviderClass="oracle.adf.share.security.providers.jps.JpsSecurityContext"
+                             authorizationEnforce="true" authenticationRequire="true"/>
+  </sec:adf-security-child>
+  <adf-mds-config xmlns="http://xmlns.oracle.com/adf/mds/config">
+    <mds-config xmlns="http://xmlns.oracle.com/mds/config" version="11.1.1.000">
+      <cust-config>
+        <match path="/">
+          <customization-class name="oracle.adf.share.config.SiteCC"/>
+        </match>
+      </cust-config>
+      <persistence-config>
+        <metadata-namespaces>
+          <namespace path="/persdef" metadata-store-usage="MAR_TargetRepos"/>
+        </metadata-namespaces>
+        <metadata-store-usages>
+          <metadata-store-usage id="MAR_TargetRepos" deploy-target="true"
+                                default-cust-store="true"/>
+        </metadata-store-usages>
+      </persistence-config>
+    </mds-config>
+  </adf-mds-config>
+  <adf-resourcebundle-config xmlns="http://xmlns.oracle.com/adf/resourcebundle/config">
+    <applicationBundleName>resourcebundles/xliffBundles/MainMDSAppOverrideBundle</applicationBundleName>
+    <bundleList>
+      <bundleId override="true">MainMDSAppOverrideBundle</bundleId>
+      <bundleId override="true">com.kuchi.main.view.ViewControllerBundle</bundleId>
+      <bundleId override="true">com.kuchi.main.model.ModelBundle</bundleId>
+    </bundleList>
+  </adf-resourcebundle-config>
+</adf-config>

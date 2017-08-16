@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config"
+            xmlns:config="http://xmlns.oracle.com/bc4j/configuration"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties"
+            xmlns:sec="http://xmlns.oracle.com/adf/security/config">
+  <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+    <defaults useBindVarsForViewCriteriaLiterals="true"
+              useBindValuesInFindByKey="true" executeEmptyOnException="true"/>
+    <startup>
+      <amconfig-overrides>
+        <config:Database jbo.locking.mode="optimistic"/>
+      </amconfig-overrides>
+    </startup>
+  </adf-adfm-config>
+  <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+    <adf-property name="adfAppUID"
+                  value="CustomizationsApp.com.kuchiurai.customizations"/>
+  </adf:adf-properties-child>
+  <adf-mds-config xmlns="http://xmlns.oracle.com/adf/mds/config">
+    <mds-config xmlns="http://xmlns.oracle.com/mds/config" version="11.1.1.000">
+      <cust-config>
+        <match path="/">
+          <customization-class name="oracle.adf.share.config.SiteCC"/>
+        </match>
+      </cust-config>
+    </mds-config>
+  </adf-mds-config>
+  <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
+    <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
+                            credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
+  </sec:adf-security-child>
+  <adf-resourcebundle-config xmlns="http://xmlns.oracle.com/adf/resourcebundle/config">
+    <applicationBundleName>resourcebundles/xliffBundles/MainMDSAppOverrideBundle</applicationBundleName>
+    <bundleList>
+      <bundleId override="true">com.kuchi.main.model.ModelBundle</bundleId>
+      <bundleId override="true">xliffBundles.MainMDSAppOverrideBundle</bundleId>
+      <bundleId override="true">MainMDSAppOverrideBundle</bundleId>
+      <bundleId override="true">com.kuchi.main.view.ViewControllerBundle</bundleId>
+    </bundleList>
+  </adf-resourcebundle-config>
+</adf-config>

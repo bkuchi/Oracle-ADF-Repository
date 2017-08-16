@@ -1,0 +1,13 @@
+<mds:customization
+  version="11.1.1.64.93"
+  xmlns:mds="http://xmlns.oracle.com/mds">
+  <mds:insert
+    parent="HrModule(xmlns(mds_ns1=http://xmlns.oracle.com/bc4j))/mds_ns1:ViewUsage[@Name='EmployeesView1']"
+    position="last">
+    <ViewCriteriaUsage
+      Name="EmployeesViewCriteria"
+      FullName="com.kuchi.main.model.views.EmployeesView.EmployeesViewCriteria"
+      xmlns="http://xmlns.oracle.com/bc4j"/>
+  </mds:insert>
+</mds:customization>
+

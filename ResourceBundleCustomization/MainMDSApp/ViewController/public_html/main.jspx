@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.kuchi.main.view.ViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelTabbed id="pt1">
+          <af:showDetailItem text="#{viewcontrollerBundle.Employee}" id="sdi1">
+            <af:region value="#{bindings.emplsflow1.regionModel}" id="r1"/>
+          </af:showDetailItem>
+        </af:panelTabbed>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

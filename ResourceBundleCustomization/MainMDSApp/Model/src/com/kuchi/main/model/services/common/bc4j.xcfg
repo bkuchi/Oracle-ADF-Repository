@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.kuchi.main.model.services.HrModule">
+      <AppModuleConfig DeployPlatform="LOCAL" name="HrModuleLocal" ApplicationName="com.kuchi.main.model.services.HrModule" jbo.project="com.kuchi.main.model.Model">
+         <Security AppModuleJndiName="com.kuchi.main.model.services.HrModule"/>
+         <Custom ns0:JDBCDataSource="jdbc/HrDSDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="LOCAL" name="HrModuleShared" ApplicationName="com.kuchi.main.model.services.HrModule" jbo.project="com.kuchi.main.model.Model">
+         <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.resetnontransactionalstate="false" jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.maxpoolsize="1"/>
+         <Security AppModuleJndiName="com.kuchi.main.model.services.HrModule"/>
+         <Custom ns0:JDBCDataSource="jdbc/HrDSDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

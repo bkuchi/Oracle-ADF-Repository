@@ -1,0 +1,20 @@
+<mds:customization version="12.2.1_20151011.0031" xmlns:mds="http://xmlns.oracle.com/mds">
+  <mds:insert parent="emplsViewPageDef" position="last">
+    <bindings xmlns="http://xmlns.oracle.com/adfm/uimodel"/>
+  </mds:insert>
+  <mds:insert parent="emplsViewPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:bindings"
+              position="last">
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HrModuleDataControl"
+            xmlns="http://xmlns.oracle.com/adfm/uimodel"/>
+  </mds:insert>
+  <mds:insert parent="emplsViewPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:bindings"
+              position="last">
+    <attributeValues IterBinding="EmployeesView1Iterator" id="CUSTOM_LAST_NAME"
+                     xmlns="http://xmlns.oracle.com/adfm/uimodel">
+      <AttrNames>
+        <Item Value="CUSTOM_LAST_NAME"/>
+      </AttrNames>
+    </attributeValues>
+  </mds:insert>
+</mds:customization>
+

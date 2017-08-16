@@ -1,0 +1,28 @@
+<mds:customization version="12.2.1_20151011.0031" xmlns:mds="http://xmlns.oracle.com/mds">
+  <mds:insert after="it6" parent="pfl1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+              xmlns:f="http://java.sun.com/jsf/core">
+    <af:inputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" value="#{bindings.CUSTOM_LAST_NAME.inputValue}"
+                  label="#{bindings.CUSTOM_LAST_NAME.hints.label}"
+                  required="#{bindings.CUSTOM_LAST_NAME.hints.mandatory}"
+                  columns="#{bindings.CUSTOM_LAST_NAME.hints.displayWidth}"
+                  maximumLength="#{bindings.CUSTOM_LAST_NAME.hints.precision}"
+                  shortDesc="#{bindings.CUSTOM_LAST_NAME.hints.tooltip}" id="sit1">
+      <f:validator xmlns:f="http://java.sun.com/jsf/core" binding="#{bindings.CUSTOM_LAST_NAME.validator}"/>
+    </af:inputText>
+  </mds:insert>
+  <mds:insert parent="(xmlns(jsp=http://java.sun.com/JSP/Page))/jsp:root" position="first"
+              xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set xmlns:c="http://java.sun.com/jsp/jstl/core" var="customizationsBundle"
+           value="#{adfBundle['com.kuchi.main.view.ViewControllerBundle']}"/>
+  </mds:insert>
+  <mds:modify element="cb5">
+    <mds:attribute name="actionListener" value="#{bindings.Commit.execute}"/>
+    <mds:attribute name="text" value="Commit"/>
+    <mds:removeAttribute name="disabled"/>
+  </mds:modify>
+  <mds:modify element="it9">
+    <mds:attribute name="label" value="#{customizationsBundle.PHONE_NUMBER}"/>
+  </mds:modify>
+</mds:customization>
+
+

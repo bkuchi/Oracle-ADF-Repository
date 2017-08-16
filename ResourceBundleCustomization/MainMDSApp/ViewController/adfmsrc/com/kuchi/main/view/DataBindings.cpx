@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="com.kuchi.main.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/fragments/emplsView.jsff"
+          usageId="com_kuchi_main_view_emplsViewPageDef"/>
+    <page path="/main.jspx" usageId="com_kuchi_main_view_mainPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_kuchi_main_view_emplsViewPageDef"
+          path="com.kuchi.main.view.pageDefs.fragments.emplsViewPageDef"/>
+    <page id="com_kuchi_main_view_mainPageDef"
+          path="com.kuchi.main.view.pageDefs.mainPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrModuleDataControl"
+                     Package="com.kuchi.main.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrModuleLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
